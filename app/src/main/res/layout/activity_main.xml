@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F5F9">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="22dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Panel de control"
+            android:textColor="#17202A"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="28dp"
+            android:text="Control de dispositivos y sensores"
+            android:textColor="#7F8C8D"
+            android:textSize="16sp" />
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Motor giratorio"
+            android:textColor="#17202A"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <!-- IMAGEN MOTOR -->
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:contentDescription="Motor giratorio"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bini" />
+
+            <!-- INFORMACION MOTOR -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Motor giratorio"
+                    android:textColor="#17202A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_estado_motor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Motor detenido"
+                    android:textColor="#7F8C8D"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- BOTON PRENDER MOTOR -->
+
+            <ImageButton
+                android:id="@+id/btn_iniciar_motor"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Prender motor"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bini" />
+
+            <!-- BOTON APAGAR MOTOR -->
+
+            <ImageButton
+                android:id="@+id/btn_apagar_motor"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Apagar motor"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                android:src="@drawable/apagar" />
+
+        </LinearLayout>
+
+
+        <!-- ================================================= -->
+        <!-- DISPOSITIVOS -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="12dp"
+            android:text="Dispositivos"
+            android:textColor="#17202A"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+        <!-- ================= LED ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <!-- IMAGEN LED -->
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:contentDescription="LED"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bini" />
+
+            <!-- INFORMACION LED -->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LED"
+                    android:textColor="#17202A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_estado_led"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="LED apagado"
+                    android:textColor="#7F8C8D"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- SWITCH LED -->
+
+            <Switch
+                android:id="@+id/switch_led"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:showText="true"
+                android:textOff="OFF"
+                android:textOn="ON" />
+
+        </LinearLayout>
+        <SeekBar
+            android:id="@+id/seekBarBrillo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="100" />
+
+        <TextView
+            android:id="@+id/tv_brillo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brillo: 100%"
+            android:textColor="#2980B9"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- ================= COMPUTADORA ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <ImageButton
+                android:id="@+id/btn_computadora"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Computadora"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/computadora" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Computadora"
+                    android:textColor="#17202A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_estado_computadora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Computadora apagada"
+                    android:textColor="#7F8C8D"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- ================= AÑADIR ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <ImageButton
+                android:id="@+id/btn_anadir"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Añadir dispositivo"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/anadir" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Añadir dispositivo"
+                    android:textColor="#17202A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Agregar un nuevo dispositivo"
+                    android:textColor="#7F8C8D"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- ================= EDITAR ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <ImageButton
+                android:id="@+id/btn_editar"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Editar dispositivo"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/lapiz" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Editar dispositivo"
+                    android:textColor="#17202A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Modificar dispositivo"
+                    android:textColor="#7F8C8D"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <!-- ================================================= -->
+        <!-- SENSORES -->
+        <!-- ================================================= -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="12dp"
+            android:text="Sensores"
+            android:textColor="#17202A"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+
+        <!-- ================= LDR ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:contentDescription="LDR"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bini" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LDR"
+                    android:textColor="#17202A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Lectura de luz"
+                    android:textColor="#7F8C8D"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_ldr"
+                android:layout_width="80dp"
+                android:layout_height="65dp"
+                android:gravity="center"
+                android:text="0%"
+                android:textColor="#2980B9"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <!-- ================= INFRARROJO ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:contentDescription="Sensor infrarrojo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/bini" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="18dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sensor infrarrojo"
+                    android:textColor="#17202A"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Detección de objetos"
+                    android:textColor="#7F8C8D"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_ir"
+                android:layout_width="110dp"
+                android:layout_height="65dp"
+                android:gravity="center"
+                android:text="Sin detección"
+                android:textColor="#2980B9"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <!-- ================= USUARIO ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <ImageButton
+                android:id="@+id/btn_usuario"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Usuario"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/usuario" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="Usuario"
+                android:textColor="#17202A"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <!-- ================= LIMPIAR ================= -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:elevation="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="18dp">
+
+            <ImageButton
+                android:id="@+id/btn_limpiar"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Limpiar"
+                android:padding="5dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/limpi" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:text="Limpiar"
+                android:textColor="#17202A"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_historial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ver historial"
+            android:layout_marginTop="15dp"/>
+        <!-- ================= PIE ================= -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="25dp"
+            android:gravity="center"
+            android:text="Sistema de control"
+            android:textColor="#95A5A6"
+            android:textSize="13sp" />
+
+    </LinearLayout>
+
+</ScrollView>
